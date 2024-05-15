@@ -1,0 +1,331 @@
+#1. Function to evaluate distance between 2 points
+#import math module to use the square root function. Calculate the distance between the two points using the distance formula. Return the distance.
+
+import math
+def distance(x1,y1,x2,y2):
+    d=math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+    return d
+x1=int(input('enter x1='))
+x2=int(input('enter x2='))
+y1=int(input('enter y1='))
+y2=int(input('enter y2='))
+print("required distance is",distance(x1,y1,x2,y2))
+
+#2. Function to check if a number is even or odd.
+#Use modulo operator to check divisibility by 2. If divisible by 2 then even, otherwise odd. 
+
+def func(n):
+    if n%2==0:
+        print(n,'is Even')
+    else:
+        print(n,'is Odd')
+n=int(input('enter number='))
+func(n)
+
+#3. Factorial of a number directly
+#Declare n that takes an integer as an input from the user. We declared a variable factorial and assigned 1. Apply loop for i from 1 to n+1 and do f = f*i. reurn f as a factorial of n.
+
+
+def fac(n):
+    f=1
+    for i in range(1,n+1):
+      f = f*i
+    return f
+n = int(input("enter number:"))
+print('Factorial of',n,'is',fac(n))
+
+#4. Factorial of a no. by recursion
+#The number is stored in n. The number is passes to the fact function to compute the factorial of the number. If n is 1, factorial is 1. Otherwise use recursion as n*fact(n-1) to get the factorial of n.
+
+def fact(n):
+    if n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+n=int(input("enter number:"))
+print("factorial=",fact(n))
+
+#5 Simple Calculator 
+#Define all operators on 2 numbers. Select option to user to choose the operator they want to perform. The selected operator executes by callingits defined function. 
+
+def add(n1,n2):
+    return n1+n2
+def subtract(n1,n2):
+    return n1-n2
+def multiply(n1,n2):
+    return n1*n2
+def divide(n1,n2):
+    return n1/n2
+print("Please select operation -\n"\
+      "1.Add\n"\
+      "2.Subtract\n"\
+      "3.Multiply\n"\
+      "4.Divide\n")
+select=int(input("Select operations form 1,2,3,4:"))
+n1=int(input("Enter first number:"))
+n2=int(input("Enter second number:"))
+
+if select==1:
+    print(n1,"+",n2,"=",add(n1,n2))
+elif select==2:
+    print(n1,"-",n2,"=",subtract(n1,n2))
+elif select==3:
+    print(n1,"*",n2,"=",multiply(n1,n2))
+elif select==4:
+    print(n1,"/",n2,"=",divide(n1,n2))
+else:
+    print("invalid input")
+
+#6Factorial by for loop
+#Declare n that takes an integer as an input from the user. We declared a variable factorial and assigned 1. Apply for loop for i from 1 to n+1 and do f = f*i. Return f as factorial of n.
+def fac(n):
+    f=1
+    for i in range(1,n+1):
+      f = f*i
+    return f
+n = int(input("enter number:"))
+print('Factorial of',n,'is',fac(n))
+
+#7. Fctorial by while loop
+#Declare n that takes an integer as an input from the user. We declared a variable factorial and assigned 1. Apply while loop for i from 1 to n+1 and do f = f*i. Return f as factorial of n.
+
+def fac(n):
+    f=1
+    i=1
+    while(i<=n):
+        f=f*i
+        i=i+1
+    return f
+n = int(input("enter number:"))
+print('Factorial of',n,'is',fac(n))
+
+#8.Sum of 1^2 + 2^2 +....+n^2
+#Take s=0. Apply for loop on I from 1 to n+1 and add the square of i to s. Return s. 
+
+def squaresum(n):
+    s=0
+    for i in range(1,n+1):
+        s=s+(i*i)
+    return s
+n=int(input('enter limit='))
+print('sum is', squaresum(n))
+
+#9. Traverse a string by for loop
+#Apply for loop to the string and characters get printed one by one.
+
+str = input("enter string=")
+for i in str:
+    print(i,end='')
+
+
+#10. Traverse a string by while loop
+#Apply while loop  from 0 to the length of the string and characters get printed one by one.
+str1 = input("enter string=")
+i=0
+while(i<len(str1)):
+    print(str1[i],end='')
+    i=i+1
+
+#11. Concatenation of 2 strings
+#Use + operator on strings to do concatenation of strings by adding them one after the other.
+
+str2 = input("enter 1st string=")
+str3 = input("enter 2nd string=")
+s=str2+str3
+print("concatenation=",s)
+
+#12. To check if a character is present in a string
+#Input string and character from user. Use 'in' operation to check if character is in string or not.
+
+str = input("enter string")
+ch=input("enter character")
+if ch in str:
+    print("character present in string")
+else:
+    print("character is not present in string")
+
+#13. To check if a substring is present in a string
+#Input substring and character from user. Use 'in' operation to check if character is in string or not.
+str = input("enter string=")
+s=input("enter substring=")
+if s in str:
+    print("substring present in string")
+else:
+    print("substring is not present in string")
+
+
+#14.To check if 2 strings are reverse of each other
+#Take a new string and keep adding the elements of string 1 in reverse order to it. Check if this new string is equal to string 2.
+
+def rev(str1,str2):
+    new=""
+    for i in range(len(str1)-1,-1,-1):
+        new+=str1[i]
+    if str2==new:
+        print("yes both are reverse of each other")
+    else:
+        print("no not reverse")
+str4 = input("enter 1st string=")
+str5 = input("enter 2nd string=")
+rev(str4,str5)
+
+#15. Sum of elements of a list
+#Input length of string and elements to it. Apply for loop to add each element one by one in s to get required sum.
+total = 0
+ 
+# creating a list
+list1 = [11, 5, 17, 18, 23]
+ 
+# Iterate each element in list
+# and add them in variable total
+for ele in range(0, len(list1)):
+    total = total + list1[ele]
+# printing total value
+print("Sum of all elements in given list: ", total)
+
+#16. Comulative sum of list elements
+#Input length of string and elts to it. Set s =0. Apply for loop to add each elt one by one in s and append them in a new list of comulative sum.
+def cumsum(It):
+    It1=[]
+    s=0
+    for i in It:
+        s=s+i
+        It1.append(s)
+    return(It1)
+It=[1,2,3.4]
+print (cumsum(It))
+
+#17. To check if a list has duplicate elts.
+#Start a Python for loop and check if the first element is identical to all other elements in the list. This approach takes O(n) time complexity.
+def check(list):
+    return all(i == list[0] for i in list)
+     
+print(check(['a', 'b', 'c']))
+print(check([1, 1, 1]))
+
+#18. Create a dictionary of 26 characters in English. Now, traverse a word and update the values of characters apperaing in the word in the dictionary.
+d=dict()
+for i in range(97,123):
+    keys=chr(i)
+    d[keys]=0
+ch = input("enter characters=")
+c=0
+for i in ch:
+    c=c+1
+    d[i]=c
+print(d)
+
+#19. Swaping keys and values of a dictionary
+def swap(d):
+    new={value: key for key,value in d.items()}
+    return new
+d = {'a': 1, 'b': 2, 'c': 3}
+print(swap(d))
+
+#20. Searching key from value in dictionary
+#Take dictionary and value as input from user. Use for loop on keys. 
+def lookup(d,v):
+    for i in d:
+        if v==d[i]:
+            print(i)
+d = {'a': 1, 'b': 2, 'c': 3}
+v = input("enter value= ")
+print('key=',end='')
+lookup(d,v)
+
+#21.To check if a tuple has repeated value 
+    
+#Use 2 for loops i and j. For each i check if it matches with any other value in tuple.
+def has_duplicates(t):
+    for i in range(len(t)):
+        for j in range(i+1,len(t)):
+            if t[i]==t[j]:
+                return True
+                continue
+    else:
+        return False
+t=tuple(input("enter elements="))
+print(has_duplicates(t))
+
+#22To reverse a tuple
+# Reversing a tuple using slicing technique
+# New tuple is created
+def Reverse(tuples):
+    new_tup = tuples[::-1]
+    return new_tup
+    
+tuples = ('z','a','d','f','g','e','e','k')
+print(Reverse(tuples))
+
+#23. To remove an elt from tuple
+test_list = [(5, 6, 7), (7, 2, 4, 6), (6, 6, 7), (6, 10, 8)]
+print("The original list is : " + str(test_list))
+N = 6
+res = []
+for i in test_list:
+    i = list(i)
+    while N in i:
+        i.remove(N)
+    res.append(tuple(i))
+print("The Tuple List after removal of element : " + str(res))
+
+#24. reading a file using loop
+
+# assign list
+l = ['Geeks','for','Geeks!']
+with open('gfg.txt', 'w+') as f:
+     
+    # write elements of list
+    for items in l:
+        f.write('%s\n' %items)
+     
+    print("File written successfully")
+
+    #25. Writing and reading a file
+
+# Sample list of data
+my_list = ["item1", "item2", "item3", "item4"]
+ 
+# Specify the file path
+file_path = "main.txt"
+ 
+# Using "with open" syntax to automatically close the file
+with open(file_path, 'w') as file:
+    # Join the list elements into a single string with a newline character
+    data_to_write = '\n'.join(my_list)
+     
+    # Write the data to the file
+    file.write(data_to_write)
+ 
+print(f"The list has been written to {file_path}.")
+
+#26. Print all prime nos. less than 50 onto a file 'prime.txt' and reading it
+
+def prime(starting_range, ending_range):
+    lst = []
+    flag = 0  # Declaring flag variable
+    # elements range between starting and ending range
+    for i in range(starting_range, ending_range):
+        for j in range(2, i):
+            if(i % j == 0):  # checking if number is divisible or not
+                flag = 1  # if number is divisible, then flag variable will become 1
+                break
+            else:
+                flag = 0
+        if(flag == 0):  # if flag variable is 0, then element will append in list
+            lst.append(i)
+    return lst
+
+starting_range = 2
+ending_range = 50
+lst = prime(starting_range, ending_range)
+if len(lst) == 0:
+    print("There are no prime numbers in this range")
+else:
+    print("The prime numbers in this range are: ", lst)
+
+
+
+
+
+
